@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import VerticalLine from "../VerticalLine";
 import Image from "next/image";
+import Link from "next/link";
 import { TEAM_MEMBERS } from "@/app/constants";
 
 export default function Team() {
@@ -8,7 +9,7 @@ export default function Team() {
         <section className="">
             <div className="bg-team p-16 pb-90">
                 <h3 className="text-heading-2 text-center max-sm:text-[28px] lg:text-[#FEFEFE] text-[#2B2B2B]">Our Legal Team</h3>
-                <p className="text-subtitle-1 text-center align-middle lg:text-[#C84E26] max-sm:text-[14px] text-[#2B2B2B99] flex justify-center items-center gap-3 mt-6 ">VIEW ALL PEOPLE <ArrowRight size={16} className="max-sm:text-[#E74623]" /></p>
+                <Link href="/dream-team" className="text-subtitle-1 text-center align-middle lg:text-[#C84E26] max-sm:text-[14px] text-[#2B2B2B99] flex justify-center items-center gap-3 mt-6 ">VIEW ALL PEOPLE <ArrowRight size={16} className="max-sm:text-[#E74623]" /></Link>
 
                 <div className="pt-[24px]">
                     <VerticalLine />
