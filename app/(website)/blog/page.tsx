@@ -57,7 +57,7 @@ export default async function BlogListing() {
                  </div>
 
                  {/* Post Content */}
-                 <div className="p-8">
+                 <div className="md:p-8 p-4">
                     <Link href={`/blog/${post.slug}`} className="block group">
                        <h2 className="lg:text-3xl text-[16px] font-bold text-gray-900 mb-4 group-hover:text-[#C84E26] transition-colors">
                          {post.title}
@@ -70,7 +70,7 @@ export default async function BlogListing() {
                     </p>
 
                     {/* Metadata Row */}
-                    <div className="hidden lg:block">
+                    <div className="hidden md:block">
                       <div className="flex items-center text-sm text-gray-500 mb-6 space-x-4">
                         {post.publishedDate && (
                           <span>{new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
@@ -82,15 +82,17 @@ export default async function BlogListing() {
                       </div>
                     </div>
 
-                    <div className="block lg:hidden">
-                      <div className="grid grid-cols-5 md:grid-cols-5 items-center text-sm text-gray-500 mb-6 space-x-4">
+                    <div className="block md:hidden">
+                      <div className="flex items-center text-sm text-gray-500 space-x-4 mb-2">
                         {post.publishedDate && (
                           <span className='max-sm:col-span-2'>{new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                         )}
                         <span className="w-1 h-1 bg-gray-300 rounded-full" />
                         <span className='max-sm:col-span-2'>{post.author && typeof post.author !== 'string' ? (post.author.username || post.author.email || 'Unknown') : 'Author'}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500 mb-6 space-x-4">
                         <span className="w-1 h-1 bg-gray-300 rounded-full" />
-                        <span className='max-sm:col-span-2 mt-2'>0 Comments</span>
+                        <span className='max-sm:col-span-2'>0 Comments</span>
                       </div>
                     </div>
 
