@@ -6,7 +6,7 @@ import { Facebook, Phone, Mail, Instagram } from 'lucide-react'
 export default function Footer() {
   return (
     <footer 
-      className="text-white pt-[60px] pb-[40px] md:py-[120px] bg-[linear-gradient(136.05deg,#1E223F_-7.57%,#131927_166.74%)]"
+      className="text-white pt-[60px] pb-[40px] md:py-[120px] bg-[linear-gradient(136.05deg,#1E223F_-7.57%,#131927_166.74%)] overflow-hidden"
     >
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
