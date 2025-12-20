@@ -36,7 +36,7 @@ export default function GradientCTA({ subtitle, title, buttonText, buttonLink, s
                     {secondaryButtonText && secondaryButtonLink && (
                         <Link 
                             href={secondaryButtonLink}
-                            className={`inline-flex border border-[#C84E26] text-white lg:px-12 lg:py-4 px-[19px] py-[14px] rounded-[4px] items-center justify-center gap-1 font-medium text-[14px] transition-colors hover:bg-[#ffffff1a] ${secondaryButtonClassName || ''}`}
+                            className={`inline-flex border border-[#C84E26] text-white lg:px-12 lg:py-4 lg:min-w-[200px] px-[19px] py-[14px] rounded-[4px] items-center justify-center gap-1 font-medium text-[14px] transition-colors hover:bg-[#ffffff1a] ${secondaryButtonClassName || ''}`}
                         >
                             {secondaryButtonText} <ArrowRight size={14} />
                         </Link>

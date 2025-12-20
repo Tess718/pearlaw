@@ -23,7 +23,7 @@ export default function CrsHero() {
             <div className="px-4 container mx-auto">
                 <div className="bg-convo lg:p-[80px] rounded-[8px]">
                     <h3 className="font-semibold lg:text-[28px] text-[16px] lg:leading-[34px] leading-[18px] tracking-[0%] text-center text-[#2B2B2B] pb-[18px]">Apply Now!</h3>
-                    <p className="font-normal text-[16px] leading-[24px] tracking-[0%] text-center text-[#2B2B2BCC] md:pb-5 lg:pb-0">Fill out the form below to submit your application.</p>
+                    <p className="font-normal text-[16px] leading-[24px] tracking-[0%] text-center text-[#2B2B2BCC] pb-[28px] md:pb-5 lg:pb-0">Fill out the form below to submit your application.</p>
                     
 
                     <form action="" className="grid grid-cols-1 md:grid-cols-2 gap-x-[36px] gap-y-[24px] pt-[40px] bg-white lg:bg-transparent rounded-[8px] lg:rounded-0 lg:border-0 border border-[#9695954D] lg:shadow-none shadow-[0_2px_4px_0_#00000026] max-sm:py-[16px] px-[18px] pb-[40px] lg:pb-0 lg:px-0">

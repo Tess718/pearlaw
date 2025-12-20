@@ -8,11 +8,13 @@ export default function Matters() {
     return (
         <section>
             <div className="hidden lg:block">
-                <div className="bg-matters p-[80px] mb-[120px]">
-                    <h3 className="text-subtitle-1 text-center text-[#C84E26]">why our expertise matters</h3>
-                    <h1 className="text-heading-2 text-center text-[#FEFEFE] mb-[106px]">How Our Expertise makes a difference</h1>
+                <div className="bg-matters py-[80px] mb-[120px]">
+                    <div className="px-4 mx-auto container">
+                        <h3 className="text-subtitle-1 text-center text-[#C84E26]">why our expertise matters</h3>
+                        <h1 className="text-heading-2 text-center text-[#FEFEFE] mb-[106px]">How Our Expertise makes a difference</h1>
 
-                    <InfoGrid items={MATTERS_ITEMS} />
+                        <InfoGrid items={MATTERS_ITEMS} />
+                    </div>
                 </div>
             </div>
 

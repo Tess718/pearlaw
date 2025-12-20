@@ -67,13 +67,13 @@ export default function Plans() {
     return (
         <section>
             <div className="bg-plans px-[24px] md:px-[80px] lg:py-[60px] md:mb-[120px] mb-[80px]">
-                <div className="md:border md:border-[#979797] md:rounded-tr-[30px] md:rounded-bl-[30px] md:px-[80px] max-sm:bg-[#f0f1f5]">
+                <div className="lg:border lg:border-[#979797] md:rounded-tr-[30px] md:rounded-bl-[30px] md:px-[80px] md:pt-[60px] max-sm:bg-[#f0f1f5]">
                     <div className="max-sm:px-4 max-sm:mx-auto max-sm:container">
-                        <h3 className="text-heading-4 max-sm:text-[14px] max-sm:leading-[20px] text-center uppercase text-white pb-[24px] hidden md:block">
+                        <h3 className="text-heading-4 max-sm:text-[14px] max-sm:leading-[20px] text-center uppercase md:text-[#2B2B2B] lg:text-white text-white pb-[24px] hidden md:block">
                             Retainership plans
                         </h3>
 
-                        <p className="text-body-semibold max-sm:text-[16px] max-sm:leading-[24px] text-center text-[#FEFEFECC] max-w-[800px] mx-auto mb-[40px] hidden md:block">
+                        <p className="text-body-semibold max-sm:text-[16px] max-sm:leading-[24px] text-center md:text-[#2B2B2B] lg:text-[#FEFEFECC] text-[#FEFEFECC] max-w-[800px] mx-auto mb-[40px] hidden md:block">
                             Choose a plan that fits your business need. Get ongoing legal
                             support with predictable costs and priority access to our expertise.
                         </p>
@@ -85,11 +85,11 @@ export default function Plans() {
                             Preferred Plan
                         </label>
 
-                        <div className="relative">
+                        <div className="relative h-fit">
                             <select
                                 value={selectedPlanIndex}
                                 onChange={(e) => setSelectedPlanIndex(Number(e.target.value))}
-                                className="w-full appearance-none rounded-[8px] px-4 py-3 text-sm mb-10 border-[0.6px] border-[#96959566] bg-[#F1F2F6] text-[#2B2B2B] border border-[#E9E9E9] pr-10 focus:outline-none focus:ring-1 focus:ring-[#C25126]"
+                                className="w-full appearance-none rounded-[8px] px-4 py-3 text-sm border-[0.6px] border-[#96959566] bg-[#F1F2F6] text-[#2B2B2B] border border-[#E9E9E9] pr-10 focus:outline-none focus:ring-1 focus:ring-[#C25126]"
                             >
                                 {PLANS.map((plan, index) => (
                                     <option key={plan.name} value={index}>
@@ -97,7 +97,7 @@ export default function Plans() {
                                     </option>
                                 ))}
                             </select>
-                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#2B2B2B]">
+                            <div className="pointer-events-none absolute inset-y-0 right-0 top-0 flex items-center px-4 text-[#2B2B2B]">
                                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
@@ -106,7 +106,7 @@ export default function Plans() {
                     </div>
 
                     {/* Mobile single plan */}
-                    <div className="block lg:hidden mb-8">
+                    <div className="block lg:hidden mb-8 max-md:mt-10">
                         <div className="relative bg-white rounded-[14px] p-6 border border-[#2B2B2B] flex flex-col h-full">
                             {selectedPlan.isPopular && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#131927] text-white text-sm py-1 px-4 rounded-full font-semibold">
@@ -170,12 +170,12 @@ export default function Plans() {
                     </div>
 
                     <div className="lg:py-[40px] flex flex-col gap-[20px]">
-                        <p className="text-sm text-center md:text-white text-[#2B2B2B99]">
+                        <p className="text-sm text-center lg:text-white text-[#2B2B2B99]">
                             Not sure which plan is right for you? Book a free consultation
                             and we’ll help you choose the best option for your business.
                         </p>
 
-                        <button className="bg-[#F1F2F633] md:text-white text-[#2B2B2B] flex items-center justify-center rounded-[8px] py-[12px] gap-2 border border-[#969595] w-full md:w-[445px] mx-auto">
+                        <button className="bg-[#F1F2F633] lg:text-white text-[#2B2B2B] flex items-center justify-center rounded-[8px] py-[12px] gap-2 border border-[#969595] w-full md:w-[445px] mx-auto">
                             <CalendarDays className="w-5 h-5" />
                             Book Free Consultation
                         </button>

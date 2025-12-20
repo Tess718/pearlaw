@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
                 </div>
 
             </div>
-            <div className="bg-convo lg:p-16 lg:w-[868px] mx-auto rounded-[8px] lg:-mt-85 pt-[60px] container mx-auto px-4 ">
+            <div className="bg-convo lg:p-16 lg:w-[868px] mx-auto rounded-[8px] lg:-mt-85 pt-[60px] container mx-auto px-4 md:my-[60px]">
                 <h3 className="text-heading-3 text-center text-[#2B2B2B]">Let’s Start the Conversation</h3>
 
                 <p className=" text-body-normal text-center max-sm:text-[16px] text-[#2B2B2BCC] pt-6">Whether you need legal advice, consultation, or representation, we’re here <br /> to help you every step of the way</p>
