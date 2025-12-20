@@ -76,21 +76,21 @@ export default async function BlogListing() {
                           <span>{new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                         )}
                         <span className="w-1 h-1 bg-gray-300 rounded-full" />
-                        <span>By {post.author && typeof post.author !== 'string' ? (post.author.username || post.author.email || 'Unknown') : 'Author'}</span>
+                        <span>{post.author && typeof post.author !== 'string' ? (post.author.username || post.author.email || 'Unknown') : 'Author'}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full" />
                         <span>0 Comments</span>
                       </div>
                     </div>
 
                     <div className="block lg:hidden">
-                      <div className="grid grid-cols-5 items-center text-sm text-gray-500 mb-6 space-x-4">
+                      <div className="grid grid-cols-5 md:grid-cols-5 items-center text-sm text-gray-500 mb-6 space-x-4">
                         {post.publishedDate && (
-                          <span className='col-span-2'>{new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                          <span className='max-sm:col-span-2'>{new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                         )}
                         <span className="w-1 h-1 bg-gray-300 rounded-full" />
-                        <span className='col-span-2'>By {post.author && typeof post.author !== 'string' ? (post.author.username || post.author.email || 'Unknown') : 'Author'}</span>
+                        <span className='max-sm:col-span-2'>{post.author && typeof post.author !== 'string' ? (post.author.username || post.author.email || 'Unknown') : 'Author'}</span>
                         <span className="w-1 h-1 bg-gray-300 rounded-full" />
-                        <span className='col-span-2 mt-2'>0 Comments</span>
+                        <span className='max-sm:col-span-2 mt-2'>0 Comments</span>
                       </div>
                     </div>
 
