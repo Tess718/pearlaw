@@ -9,7 +9,7 @@ export default function AboutHero() {
             </div>
 
             <div className="container mx-auto px-4 lg:pt-[80px] lg:pb-[60px]">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             
                   <div className="relative h-full w-full">
                     <Image

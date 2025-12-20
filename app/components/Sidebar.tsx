@@ -16,6 +16,7 @@ export default async function Sidebar() {
   const popularTags = (await payload.find({
     collection: 'tags',
     limit: 10,
+    sort: 'createdAt',
   })).docs
 
   const practiceAreas = (await payload.find({
@@ -40,17 +41,23 @@ export default async function Sidebar() {
                  </div>
                  
                  <div className='flex flex-col justify-between'>
-                    <h4 className="font-bold text-gray-900 leading-tight group-hover:text-[#C84E26] transition-colors line-clamp-2">
+                    <h4 className="font-bold text-gray-900 leading-tight group-hover:text-[#C84E26] transition-colors line-clamp-2 max-sm:text-[14px]">
                       {post.title}
                     </h4>
-                    <div className="flex gap-6 mt-3">
-                     <p className="text-xs text-gray-500 flex items-center gap-2">
-                       <Clock4 size={14} />
-                       {post.publishedDate ? new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'No Date'}
-                       <span className="mx-1"><ClipboardList size={14} /></span>
-                       <span>{post.author && typeof post.author !== 'string' ? (post.author.username || 'Author') : 'Author'}</span>
-                     </p>
-                    </div>
+                     <div className="flex gap-6 mt-3">
+                      <div className="text-xs text-gray-500 lg:flex flex-col items-center gap-2">
+                       <div className="flex items-center gap-2">
+                         <Clock4 size={14} />
+                         {post.publishedDate ? new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'No Date'}
+                       </div>
+
+                       <div className="flex items-center gap-2 max-sm:pt-2">
+                         <span className=""><ClipboardList size={14} /></span>
+                         <span>{post.author && typeof post.author !== 'string' ? (post.author.username || 'Author') : 'Author'}</span>
+
+                       </div>
+                      </div>
+                     </div>
                  </div>
               </Link>
             ))}
@@ -62,7 +69,7 @@ export default async function Sidebar() {
          <h3 className="text-heading-4-semibold capitalize text-[#2B2B2B] mb-6">Tags</h3>
          <div className="flex flex-wrap gap-2">
             {popularTags.map(tag => (
-               <span key={tag.id} className="bg-[#C84E26CC] text-[#FEFEFE] text-tag text-center capitalize py-[14px] px-[20px] rounded-[4px]">
+               <span key={tag.id} className="md:bg-[#C84E26CC] bg-[#C84E26] text-[#FEFEFE] text-tag text-center capitalize md:py-[14px] md:px-[20px] px-[10px] py-[14px] rounded-[4px]">
                  {tag.name}
                </span>
             ))}

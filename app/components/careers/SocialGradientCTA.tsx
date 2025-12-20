@@ -3,13 +3,16 @@ import { Facebook, Instagram } from 'lucide-react';
 
 export default function SocialGradientCTA() {
     return (
-        <section className="py-[80px] bg-[linear-gradient(104.72deg,#2B2B2B_-5.75%,#1E223F_98.84%)] w-full">
+        <section className="lg:py-[80px] py-[28px] bg-[linear-gradient(104.72deg,#2B2B2B_-5.75%,#1E223F_98.84%)] w-full">
             <div className="container mx-auto px-4 text-center">
-                <h4 className="font-semibold text-[16px] leading-[24px] uppercase text-[#FEFEFECC] tracking-wider mb-4">
+                <h4 className="font-semibold text-[16px] leading-[24px] uppercase text-[#FEFEFECC] tracking-wider mb-4 hidden md:block">
                     READY TO GET STARTED?
                 </h4>
-                <h2 className="font-semibold text-[24px] md:text-[28px] leading-[34px] text-[#FEFEFE] mb-10 mx-auto">
-                    Follow us on social media for the latest updates on <br/> job openings and firm news.
+                <h4 className="font-semibold text-[16px] leading-[24px] uppercase text-[#FEFEFECC] tracking-wider mb-4 block md:hidden">
+                    stay connected with us
+                </h4>
+                <h2 className="font-semibold text-[18px] md:text-[28px] lg:leading-[34px] leading-[28px] text-[#FEFEFE] mb-10 mx-auto">
+                    Follow us on social media for the latest updates on <br className='hidden md:block'/> job openings and firm news.
                 </h2>
                 
                 <div className="flex flex-col items-center gap-4">

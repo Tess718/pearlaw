@@ -3,7 +3,7 @@ import { getPayloadClient } from '@/lib/payload'
 import { notFound } from 'next/navigation'
 import SerializeLexical from '@/app/components/SerializeLexical'
 import Sidebar from '@/app/components/Sidebar'
-import Image from 'next/image'
+
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -27,18 +27,19 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="relative w-full h-[276px] md:h-[276px] bg-blog">
+      <div className="relative w-full h-[218px] md:h-[276px] bg-blog">
        
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50" />
 
         {/* Hero Content */}
-        <div className="absolute inset-0 container mx-auto px-4 flex flex-col justify-center items-center text-center z-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">
+        <div className="absolute inset-0 container mx-auto px-4 flex flex-col max-sm:gap-10 justify-center items-center text-center z-10">
+          <h1 className="lg:text-5xl text-[14px] font-bold lg:text-white text-[#C84E26] tracking-wide lg:hidden">Blog</h1>
+          <h1 className="text-[20px] lg:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap justify-center items-center gap-6 text-white/90 text-sm md:text-base">
+          <div className="flex flex-wrap justify-center items-center gap-6 text-white/90 text-sm md:text-base hidden lg:block">
             {/* Date */}
             {post.publishedDate && (
                <div className="flex items-center gap-2">
@@ -62,7 +63,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       </div>
 
       {/* Main Content Area */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 md:py-16 py-[40px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           {/* Post Content (Left Column) */}

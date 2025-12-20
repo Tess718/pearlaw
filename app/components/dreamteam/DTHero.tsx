@@ -17,18 +17,18 @@ export default function DTHero() {
 
                 <p className="text-[16px] font-semibold leading-[22px] text-[#2B2B2B] text-center">Dedicated to excellence and client sucess, our experienced team brings decades of legal expertise to every case we handle.</p>
             </div>
-                <div className="flex lg:flex-row flex-col justify-center items-stretch lg:gap-[60px] gap-[18px] lg:py-[80px] pt-[60px]">
+                <div className="flex md:flex-row flex-col justify-center items-stretch lg:gap-[60px] gap-[18px] lg:py-[80px] pt-[60px]">
                     
-                    <div className="lg:w-[629px] w-full max-sm:h-[280px] relative">
+                    <div className="lg:w-[629px] md:w-[400px] w-full max-sm:h-[280px] relative">
                         <Image 
-                        src="/2022be138f315cfae4b2a6cb4ed0d6fc70d77d3a.png"
+                        src="/2022be138f315cfae4b2a6cb4ed0d6fc70d77d3a.webp"
                         alt=""
                         fill 
                         className="object-cover"/>
 
                     </div>
 
-                    <div className="lg:w-[343px]">
+                    <div className="md:w-[343px]">
                         <div className='w-[40px] h-[3.5px] bg-[#C84E26] rounded-[3.5px] mb-4 hidden md:block'/>
 
                         <h3 className="font-bold lg:text-[24px] lg:leading-[28px] text-[18px] leading-[24px] tracking-[0%] capitalize text-[#2B2B2B] pt-[18px]">Pearl Eghimentor</h3>

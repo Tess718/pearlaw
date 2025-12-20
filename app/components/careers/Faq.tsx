@@ -33,16 +33,16 @@ export default function Faq() {
   return (
     <section>
       <div className="px-4 container mx-auto">
-      <div className="flex flex-col gap-[12px] mb-[40px] text-center ">
-        <h2 className="font-bold text-[36px] leading-[44px] text-[#2B2B2B]">
-          Frequently Asked Questions
+      <div className="flex flex-col gap-[12px] md:mb-[40px] mb-[18px] text-center ">
+        <h2 className="font-bold lg:text-[36px] lg:leading-[44px] text-[20px] leading-[28px] text-[#2B2B2B]">
+          Frequently Asked <br className="block lg:hidden"/> Questions
         </h2>
-        <p className="font-normal text-[16px] leading-[24px] text-[#2B2B2BCC]">
+        <p className="font-normal text-[16px] leading-[24px] text-[#2B2B2BCC] hidden lg:block">
           Fill out the form below to submit your application.
         </p>
       </div>
 
-      <div className="flex flex-col gap-6 max-w-[1240px] mx-auto pb-[120px]">
+      <div className="flex flex-col gap-6 max-w-[1240px] mx-auto lg:pb-[120px] pb-[80px]">
         {faqData.map((item, index) => (
           <div
             key={index}

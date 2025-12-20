@@ -18,13 +18,17 @@ export default async function BlogListing() {
   return (
     <div className="bg-[#f0f1f5] min-h-screen pb-20">
       {/* Hero Section */}
-      <div className="relative h-[276px] w-full overflow-hidden mb-12 bg-blog">
+      <div className="relative lg:h-[276px] h-[218px] w-full overflow-hidden mb-12 bg-blog">
          <div className="absolute inset-0 bg-black/50 z-10" />
          <div className="absolute inset-0 flex items-center flex-col gap-8 justify-center z-20">
-            <h1 className="text-5xl font-bold text-white tracking-wide">Blog</h1>
-            <p className='font-bold text-[20px] leading-[24px] tracking-normal text-center uppercase text-[#FFFFFFCC]'>caption aligned here</p>
+            <h1 className="lg:text-5xl text-[14px] font-bold lg:text-white text-[#C84E26] tracking-wide">Blog</h1>
+            <p className='font-bold hidden lg:block
+             text-[20px] leading-[24px] tracking-normal text-center uppercase text-[#FFFFFFCC]'>caption aligned here</p>
+             
+            <p className='font-bold block lg:hidden
+             text-[20px] leading-[24px] tracking-normal text-center text-[#FFFFFFCC]'>Stay updated with stories, articles in and around Pearlaw Corporate</p>
          </div>
-         {/* Optional: Add actual Image component here if we have a hero asset */}
+         
       </div>
 
       <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -43,7 +47,7 @@ export default async function BlogListing() {
                        src={post.coverImage.url} 
                        alt={post.coverImage.alt || post.title} 
                        fill
-                       className="object-cover"
+                       className="object-cover max-sm:rounded-t-[8px] max-sm:h-[328px]"
                      />
                    ) : (
                      <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">
@@ -55,26 +59,41 @@ export default async function BlogListing() {
                  {/* Post Content */}
                  <div className="p-8">
                     <Link href={`/blog/${post.slug}`} className="block group">
-                       <h2 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-[#C84E26] transition-colors">
+                       <h2 className="lg:text-3xl text-[16px] font-bold text-gray-900 mb-4 group-hover:text-[#C84E26] transition-colors">
                          {post.title}
                        </h2>
                     </Link>
 
                     {/* Excerpt - Use real excerpt or truncate */}
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-gray-600 mb-6 leading-relaxed text-[14px]">
                        {post.excerpt ? post.excerpt : 'Click to read more...'}
                     </p>
 
                     {/* Metadata Row */}
-                    <div className="flex items-center text-sm text-gray-500 mb-6 space-x-4">
-                       {post.publishedDate && (
-                         <span>{new Date(post.publishedDate).toLocaleDateString()}</span>
-                       )}
-                       <span className="w-1 h-1 bg-gray-300 rounded-full" />
-                       <span>By {post.author && typeof post.author !== 'string' ? (post.author.username || post.author.email || 'Unknown') : 'Author'}</span>
-                       <span className="w-1 h-1 bg-gray-300 rounded-full" />
-                       <span>0 Comments</span>
+                    <div className="hidden lg:block">
+                      <div className="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        {post.publishedDate && (
+                          <span>{new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                        )}
+                        <span className="w-1 h-1 bg-gray-300 rounded-full" />
+                        <span>By {post.author && typeof post.author !== 'string' ? (post.author.username || post.author.email || 'Unknown') : 'Author'}</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full" />
+                        <span>0 Comments</span>
+                      </div>
                     </div>
+
+                    <div className="block lg:hidden">
+                      <div className="grid grid-cols-5 items-center text-sm text-gray-500 mb-6 space-x-4">
+                        {post.publishedDate && (
+                          <span className='col-span-2'>{new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                        )}
+                        <span className="w-1 h-1 bg-gray-300 rounded-full" />
+                        <span className='col-span-2'>By {post.author && typeof post.author !== 'string' ? (post.author.username || post.author.email || 'Unknown') : 'Author'}</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full" />
+                        <span className='col-span-2 mt-2'>0 Comments</span>
+                      </div>
+                    </div>
+
 
                     {/* Read More Button */}
                     <Link href={`/blog/${post.slug}`} className="inline-block bg-[#C84E26] text-white px-8 py-3 rounded font-semibold text-sm hover:bg-[#c26546] transition-colors">

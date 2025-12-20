@@ -16,7 +16,7 @@ interface InfoGridProps {
 export default function InfoGrid({ items, className, cols }: InfoGridProps) {
     const gridCols = cols || items.length;
     
-    let gridClass = "lg:grid-cols-4"; // Default
+    let gridClass = "lg:grid-cols-4 md"; // Default
     if (gridCols === 1) gridClass = "lg:grid-cols-1";
     if (gridCols === 2) gridClass = "lg:grid-cols-2";
     if (gridCols === 3) gridClass = "lg:grid-cols-3";

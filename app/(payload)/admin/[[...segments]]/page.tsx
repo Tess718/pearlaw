@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 import type { Metadata } from 'next'
 
 import config from '@/payload.config'

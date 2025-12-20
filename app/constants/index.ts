@@ -43,32 +43,32 @@ export const TEAM_MEMBERS = [
     {
         name: "Adebayo Johnson",
         role: "Senior Associate",
-        image: "/3a5aa342e1c712661d65209aebc76bcd99ac6977.png"
+        image: "/3a5aa342e1c712661d65209aebc76bcd99ac6977.webp"
     },
     {
         name: "Chioma Okonkwo",
         role: "Associate",
-        image: "/fe805bf2ce26cfb1e948b3a1b62e3049d992e6c7.png"
+        image: "/fe805bf2ce26cfb1e948b3a1b62e3049d992e6c7.webp"
     },
     {
         name: "Tunde Adeleke",
         role: "Legal Consultant",
-        image: "/90b12a09f4f29614abbffcb901278d508f33fd7b.png"
+        image: "/90b12a09f4f29614abbffcb901278d508f33fd7b.webp"
     },
     {
         name: "Blessing Okoro",
         role: "Associate",
-        image: "/6e4420df5b668f729d16ad2c3db455eb8bb78fad.png"
+        image: "/6e4420df5b668f729d16ad2c3db455eb8bb78fad.webp"
     },
     {
         name: "Ibrahim Hassan",
         role: "Legal Advisor",
-        image: "/adf01f65d07e6f7c4ae00c4864b36220cd1676b0.png"
+        image: "/adf01f65d07e6f7c4ae00c4864b36220cd1676b0.webp"
     },
     {
         name: "Grace Eze",
         role: "Junior Associate",
-        image: "/ab35c69e034724568e7feca66da9776582de5653.png"
+        image: "/ab35c69e034724568e7feca66da9776582de5653.webp"
     }
 ];
 
@@ -151,10 +151,11 @@ export const PLANS = [
         {
             name: "GEM Plan",
             price: "#400,000",
+            duration: "3 Months",
             description: "Perfect for early-stage startups and small businesses",
             features: [
                 "Up to 10 hours of legal consultation monthly",
-                "Contract review and drafting",
+                "Contact review and drafting",
                 "Basic compliance advisory",
                 "Email support (48hr response)",
                 "Quarterly compliance check"
@@ -163,6 +164,7 @@ export const PLANS = [
         {
             name: "IVORY Plan",
             price: "#750,000",
+            duration: "6 Months",
             description: "Ideal for growing businesses with regular legal needs.",
             features: [
                 "Up to 25 hours of legal consultation monthly",
@@ -178,6 +180,7 @@ export const PLANS = [
         {
             name: "JADE Plan",
             price: "#1,400,000",
+            duration: "1 Year",
             description: "Comprehensive legal support for established businesses",
             features: [
                 "Unlimited legal consultation",

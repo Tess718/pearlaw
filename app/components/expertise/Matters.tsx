@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import Image from "next/image";
 import GradientCTA from "../GradientCTA";
 import InfoGrid from "../InfoGrid";
@@ -43,7 +43,7 @@ export default function Matters() {
                  </div>
 
                  <Image
-                  src="/f4a3a10015d419986cdd80da18aef8e0598cd9e9.png"
+                  src="/f4a3a10015d419986cdd80da18aef8e0598cd9e9.webp"
                   width={300}
                   height={220}
                   alt="expertise"

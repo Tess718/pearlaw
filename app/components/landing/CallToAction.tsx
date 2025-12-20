@@ -1,5 +1,5 @@
 
-import Link from 'next/link';
+
 import { CircleCheck, ArrowRight } from 'lucide-react';
 
 export default function CallToAction() {

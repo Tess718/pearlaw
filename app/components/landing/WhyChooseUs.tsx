@@ -5,7 +5,7 @@ export default function WhyChooseUs() {
 
     return (
         <section className="lg:pb-[120px]">
-            <div className="bg-client lg:pt-16 pb-30 max-sm:py-[40px]">
+            <div className="bg-client md:pt-16 lg:pb-30 md:pb-16 max-sm:py-[40px]">
                 <div className="container px-4 mx-auto">
                     <div className="lg:border lg:border-[#979797CC] rounded-tr-[30px] rounded-bl-[30px] lg:p-18 py-">
                         <h3 className="text-subtitle-1 text-center align-middle text-[#C84E26]">WHAT WE ARE EXPERT AT</h3>
@@ -14,13 +14,13 @@ export default function WhyChooseUs() {
 
                         <VerticalLine />
 
-                        <div className="flex flex-col lg:flex-row text-body-large text-[#FEFEFECC] max-sm:text-center gap-15 pt-10">
+                        <div className="flex flex-col md:flex-row text-body-large text-[#FEFEFECC] max-sm:text-center gap-15 pt-10">
                             <p>Our firm is built on a foundation of trust, dedication, and exceptional service. For years, we have guided clients through complex legal matters with clarity and confidence. Every case we handle is approached with care, precision, and a deep commitment to achieving the best possible outcome.</p>
 
                             <p>With extensive experience across diverse legal fields, we provide clients with strategic advice and reliable representation. Our focus is on delivering practical solutions, protecting our clients’ interests, and ensuring they are supported every step of the way.</p>
                         </div>
 
-                        <div className="flex flex-col lg:flex-row max-sm:gap-6 pt-16 justify-between lg:pb-60 pb-[40px]">
+                        <div className="flex flex-col md:flex-row max-sm:gap-6 pt-16 justify-between lg:pb-60 pb-[40px]">
                             <div className="lg:w-fit">
                                 <h3 className="text-stat-number text-center text-[#FEFEFE]">500+</h3>
                                 <p className="text-stat-label text-center text-[#C84E26] pt-6

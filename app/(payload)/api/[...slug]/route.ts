@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 import { REST_DELETE, REST_GET, REST_POST, REST_PUT, REST_OPTIONS, REST_PATCH } from '@payloadcms/next/routes'
 import config from '@/payload.config'
 

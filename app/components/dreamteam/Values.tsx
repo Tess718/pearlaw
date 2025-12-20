@@ -11,7 +11,7 @@ export default function Values(){
 
             <h1 className="font-semibold lg:text-[32px] text-[28px] lg:leading-[36px] leading-[34px] tracking-[0%] text-center text-[#2B2B2B] lg:pb-[60px] pb-[24px]">Areas of Expertise</h1>
 
-            <div className="block lg:hidden px-4 mb-[80px]">
+            <div className="block md:hidden px-4 mb-[80px]">
                 <VerticalLine />
                 <div className="flex flex-col gap-[48px]">
                     {VALUE_ITEMS.map((item, index) => (
@@ -33,7 +33,7 @@ export default function Values(){
                 </div>
             </div>
 
-           <div className="hidden lg:block">
+           <div className="hidden md:block">
                 <InfoGrid items={VALUE_ITEMS} className="legacy py-[80px] px-16 mb-[80px]" />
             </div> 
 

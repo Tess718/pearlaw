@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { Quote } from 'lucide-react';
+
 
 const testimonials = [
     {
@@ -59,9 +59,9 @@ export default function Testimonials() {
                     </div>
                 </div>
             <div className="bg-testimonials relative py-20 px-4 md:px-16 overflow-hidden max-sm:rounded-[8px] max-sm:mb-[80px]">
-                <div className="backdrop-blur-sm absolute backdrop-blur-2xl top-0 right-0 bottom-0 left-0"/>
+                <div className="backdrop-blur-[20px] absolute backdrop-blur-2xl top-0 right-0 bottom-0 left-0"/>
                 
-                <div className="max-w-[1240px] mx-auto min-h-[600px] md:border md:border-white/20 rounded-tr-[30px] rounded-bl-[30px] relative flex flex-col items-center justify-center p-8 md:p-16">
+                <div className="max-w-[1240px] mx-auto min-h-[600px] md:border md:border-white/20 rounded-tr-[30px] rounded-bl-[30px] relative z-10 flex flex-col items-center justify-center p-8 md:p-16">
                     
                     {/* Header */}
                     <div className="flex flex-col items-center mb-8">
