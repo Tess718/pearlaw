@@ -45,7 +45,7 @@ export default async function Sidebar() {
                       {post.title}
                     </h4>
                      <div className="flex gap-6 mt-3">
-                      <div className="text-xs text-gray-500 lg:flex flex-col items-center gap-2">
+                      <div className="text-xs text-gray-500 lg:flex-row flex flex-col items-center gap-2">
                        <div className="flex items-center gap-2">
                          <Clock4 size={14} />
                          {post.publishedDate ? new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'No Date'}

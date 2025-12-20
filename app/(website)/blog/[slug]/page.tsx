@@ -39,7 +39,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap justify-center items-center gap-6 text-white/90 text-sm md:text-base hidden lg:block">
+        <div className='hidden lg:block'>
+          <div className="flex flex-wrap justify-center items-center gap-6 text-white/90 text-sm md:text-base">
             {/* Date */}
             {post.publishedDate && (
                <div className="flex items-center gap-2">
@@ -59,6 +60,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               <span>0 Comments</span>
             </div>
           </div>
+
+        </div>
         </div>
       </div>
 
