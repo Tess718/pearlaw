@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Clock4, ClipboardList, Search } from 'lucide-react'
+import { Clock4, ClipboardList } from 'lucide-react'
 import { getPayloadClient } from '@/lib/payload'
 
 // We will fetch data inside this component as it's a Server Component
