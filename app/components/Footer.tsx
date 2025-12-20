@@ -167,7 +167,7 @@ export default function Footer() {
                 <input 
                     type="email" 
                     placeholder="Email address" 
-                    className="flex-1 bg-white/10 border border-white/10 rounded-[4px] px-4 py-3 text-white placeholder:text-gray-400 focus:outline-none focus:border-[#C84E26]"
+                    className="w-[206px] bg-white/10 border border-white/10 rounded-[4px] px-4 py-3 text-white placeholder:text-gray-400 focus:outline-none focus:border-[#C84E26]"
                 />
                 <button className="bg-[#C84E26] text-white px-6 py-3 rounded-[4px] font-medium text-sm">
                     Subscribe
