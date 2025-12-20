@@ -6,11 +6,11 @@ import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 import { s3Storage } from '@payloadcms/storage-s3'
 
-import { Users } from './app/(payload)/collections/Users'
-import { Media } from './app/(payload)/collections/Media'
-import { Blog } from './app/(payload)/collections/Blog'
-import { Tags } from './app/(payload)/collections/Tags'
-import { PracticeAreas } from './app/(payload)/collections/PracticeAreas'
+import { Users } from '@/app/(payload)/collections/Users'
+import { Media } from '@/app/(payload)/collections/Media'
+import { Blog } from '@/app/(payload)/collections/Blog'
+import { Tags } from '@/app/(payload)/collections/Tags'
+import { PracticeAreas } from '@/app/(payload)/collections/PracticeAreas'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
