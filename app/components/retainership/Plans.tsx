@@ -106,7 +106,7 @@ export default function Plans() {
                     </div>
 
                     {/* Mobile single plan */}
-                    <div className="block lg:hidden mb-8 max-md:mt-10">
+                    <div className="block lg:hidden mb-8 md:mt-10 lg:mt-0">
                         <div className="relative bg-white rounded-[14px] p-6 border border-[#2B2B2B] flex flex-col h-full">
                             {selectedPlan.isPopular && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#131927] text-white text-sm py-1 px-4 rounded-full font-semibold">
