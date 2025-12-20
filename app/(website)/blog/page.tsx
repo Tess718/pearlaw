@@ -1,0 +1,96 @@
+import React from 'react'
+import { getPayloadClient } from '@/lib/payload'
+import Link from 'next/link'
+import Image from 'next/image'
+import Sidebar from '@/app/components/Sidebar'
+
+export default async function BlogListing() {
+  const payload = await getPayloadClient()
+
+  // Fetch Posts
+  const posts = await payload.find({
+    collection: 'blog',
+    limit: 10,
+    sort: 'publishedDate',
+    depth: 2,
+  })
+
+  return (
+    <div className="bg-[#f0f1f5] min-h-screen pb-20">
+      {/* Hero Section */}
+      <div className="relative h-[276px] w-full overflow-hidden mb-12 bg-blog">
+         <div className="absolute inset-0 bg-black/50 z-10" />
+         <div className="absolute inset-0 flex items-center flex-col gap-8 justify-center z-20">
+            <h1 className="text-5xl font-bold text-white tracking-wide">Blog</h1>
+            <p className='font-bold text-[20px] leading-[24px] tracking-normal text-center uppercase text-[#FFFFFFCC]'>caption aligned here</p>
+         </div>
+         {/* Optional: Add actual Image component here if we have a hero asset */}
+      </div>
+
+      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        {/* Main Content Area (2 cols wide) */}
+        <div className="space-y-12">
+          {posts.docs.length === 0 ? (
+            <p className="text-gray-500 text-lg">No posts found yet.</p>
+          ) : (
+            posts.docs.map((post) => (
+              <div key={post.id} className="bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                 {/* Post Image */}
+                 <div className="relative w-full h-96">
+                   {post.coverImage && typeof post.coverImage !== 'string' && post.coverImage.url ? (
+                     <Image 
+                       src={post.coverImage.url} 
+                       alt={post.coverImage.alt || post.title} 
+                       fill
+                       className="object-cover"
+                     />
+                   ) : (
+                     <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-400">
+                        No Image
+                     </div>
+                   )}
+                 </div>
+
+                 {/* Post Content */}
+                 <div className="p-8">
+                    <Link href={`/blog/${post.slug}`} className="block group">
+                       <h2 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-[#C84E26] transition-colors">
+                         {post.title}
+                       </h2>
+                    </Link>
+
+                    {/* Excerpt - Use real excerpt or truncate */}
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                       {post.excerpt ? post.excerpt : 'Click to read more...'}
+                    </p>
+
+                    {/* Metadata Row */}
+                    <div className="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                       {post.publishedDate && (
+                         <span>{new Date(post.publishedDate).toLocaleDateString()}</span>
+                       )}
+                       <span className="w-1 h-1 bg-gray-300 rounded-full" />
+                       <span>By {post.author && typeof post.author !== 'string' ? (post.author.username || post.author.email || 'Unknown') : 'Author'}</span>
+                       <span className="w-1 h-1 bg-gray-300 rounded-full" />
+                       <span>0 Comments</span>
+                    </div>
+
+                    {/* Read More Button */}
+                    <Link href={`/blog/${post.slug}`} className="inline-block bg-[#C84E26] text-white px-8 py-3 rounded font-semibold text-sm hover:bg-[#c26546] transition-colors">
+                      READ MORE
+                    </Link>
+                 </div>
+              </div>
+            ))
+          )}
+        </div>
+
+        <aside className="pl-0 lg:pl-12">
+            <Sidebar />
+        </aside>
+
+      </div>
+    </div>
+  )
+}

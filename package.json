@@ -9,12 +9,22 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.0.10",
-    "react": "19.2.1",
-    "react-dom": "19.2.1"
+    "@payloadcms/db-mongodb": "^3.67.0",
+    "@payloadcms/next": "^3.67.0",
+    "@payloadcms/richtext-lexical": "^3.67.0",
+    "@payloadcms/ui": "^3.67.0",
+    "bootstrap-icons": "^1.13.1",
+    "graphql": "^16.8.1",
+    "lucide-react": "^0.561.0",
+    "next": "^15.5.9",
+    "payload": "^3.67.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/escape-html": "^1.0.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
