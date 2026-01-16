@@ -11,7 +11,7 @@ export default function ExpHero() {
                 <Image 
                  src="/Vectorline.png"
                  alt="Vectorline"
-                 width={15}
+                 width={1200}
                  height={15}
                  className="absolute right-0 left-0 bottom-3 w-full hidden md:block"
                  />
@@ -19,7 +19,7 @@ export default function ExpHero() {
                 <Image 
                  src="/Group 877.png"
                  alt="Vectorline"
-                 width={15}
+                 width={1200}
                  height={15}
                  className="absolute right-0 left-0 bottom-5 w-full block md:hidden"
                  />
