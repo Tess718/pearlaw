@@ -11,7 +11,7 @@ export default function RtnHero() {
                 <Image 
                  src="/Vectorline.png"
                  alt="Vectorline"
-                 width={15}
+                 width={1200}
                  height={15}
                  className="absolute right-0 left-0 bottom-3 w-full hidden lg:block"
                  />
