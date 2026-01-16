@@ -35,17 +35,18 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-8">
+        <ul className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href} 
-              className="text-nav-link text-[#131927]"
-            >
-              {link.name}
-            </Link>
+            <li key={link.name}>
+              <Link 
+                href={link.href} 
+                className="text-nav-link text-[#131927]"
+              >
+                {link.name}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Right Side Actions */}
         <div className="flex items-center gap-4">
@@ -59,8 +60,10 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button 
+            type="button"
+            aria-label="Toggle Mobile Menu"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-gray-600 hover:text-[#D97757] focus:outline-none"
+            className="lg:hidden p-2 text-gray-600 hover:text-[#D97757] focus-visible:ring-2 focus-visible:ring-[#D97757] focus:outline-none rounded-md"
           >
             {isOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>

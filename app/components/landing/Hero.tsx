@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 export default function Hero() {
   return (
     <section className='bg-hero lg:py-38 py-[51px]'>
-      <h4 className='text-subtitle-welcome text-center text-[#FFFFFF]'>WELCOME TO</h4>
+      <p className='text-subtitle-welcome text-center text-[#FFFFFF]'>WELCOME TO</p>
       <h1 className='text-heading-hero text-center lg:py-8 py-[16px] text-[#FAFAFA]'>PEARLAW <br /> CORPORATE</h1>
       <p className='text-body-normal text-center text-[#FEFEFE]'>We provide expert legal solutions for businesses and individuals. Exerience. Trust. Results.</p>
 

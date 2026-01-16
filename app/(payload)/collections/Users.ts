@@ -7,7 +7,6 @@ export const Users: CollectionConfig = {
   },
   auth: true,
   fields: [
-    // Email and Password are included by default with `auth: true`
     {
       name: 'username',
       type: 'text',

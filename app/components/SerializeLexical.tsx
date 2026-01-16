@@ -1,6 +1,6 @@
-/* eslint-disable */
 import React, { Fragment } from 'react'
 import escapeHTML from 'escape-html'
+import Image from 'next/image'
 
 export const IS_BOLD = 1
 export const IS_ITALIC = 2
@@ -10,10 +10,27 @@ export const IS_CODE = 16
 export const IS_SUBSCRIPT = 32
 export const IS_SUPERSCRIPT = 64
 
+interface LexicalNode {
+  type: string
+  text?: string
+  format?: number
+  children?: LexicalNode[]
+  tag?: string
+  fields?: {
+    url: string
+    newTab?: boolean
+  }
+  value?: {
+    url: string
+    alt?: string
+  }
+  // Index signature removed to strict type check and satisfy lint rules
+}
+
 export default function serializeLexical({
   nodes,
 }: {
-  nodes: any[]
+  nodes: LexicalNode[]
 }): React.JSX.Element {
   return (
     <Fragment>
@@ -23,29 +40,29 @@ export default function serializeLexical({
         if (node.type === 'text') {
           let text = (
             <span
-              dangerouslySetInnerHTML={{ __html: escapeHTML(node.text) }}
+              dangerouslySetInnerHTML={{ __html: escapeHTML(node.text || '') }}
             />
           )
 
-          if (node.format & IS_BOLD) {
+          if (node.format && node.format & IS_BOLD) {
             text = <strong>{text}</strong>
           }
-          if (node.format & IS_ITALIC) {
+          if (node.format && node.format & IS_ITALIC) {
             text = <em>{text}</em>
           }
-          if (node.format & IS_STRIKETHROUGH) {
+          if (node.format && node.format & IS_STRIKETHROUGH) {
             text = <span className="line-through">{text}</span>
           }
-          if (node.format & IS_UNDERLINE) {
+          if (node.format && node.format & IS_UNDERLINE) {
             text = <span className="underline">{text}</span>
           }
-          if (node.format & IS_CODE) {
+          if (node.format && node.format & IS_CODE) {
             text = <code>{text}</code>
           }
-          if (node.format & IS_SUBSCRIPT) {
+          if (node.format && node.format & IS_SUBSCRIPT) {
             text = <sub>{text}</sub>
           }
-          if (node.format & IS_SUPERSCRIPT) {
+          if (node.format && node.format & IS_SUPERSCRIPT) {
             text = <sup>{text}</sup>
           }
 
@@ -55,7 +72,7 @@ export default function serializeLexical({
         if (node.type === 'block') {
           return (
             <Fragment key={i}>
-              {serializeLexical({ nodes: node.children })}
+              {serializeLexical({ nodes: node.children || [] })}
             </Fragment>
           )
         }
@@ -69,7 +86,7 @@ export default function serializeLexical({
           case 'h5':
           case 'h6': {
             const tag = node.type === 'heading' ? node.tag : node.type
-            const content = serializeLexical({ nodes: node.children })
+            const content = serializeLexical({ nodes: node.children || [] })
 
             switch (tag) {
               case 'h1':
@@ -95,21 +112,21 @@ export default function serializeLexical({
                 key={i}
                 className="border-l-4 border-gray-300 pl-4 italic my-4"
               >
-                {serializeLexical({ nodes: node.children })}
+                {serializeLexical({ nodes: node.children || [] })}
               </blockquote>
             )
 
           case 'ul':
           case 'list': {
             const items = node.children?.filter(
-              (child: any) =>
+              (child) =>
                 child.type === 'li' || child.type === 'listitem'
             )
 
             return (
               <ul key={i} className="list-disc pl-5 my-4">
-                {items?.map((item: any, index: number) => (
-                  <Fragment key={item.key ?? index}>
+                {items?.map((item, index) => (
+                  <Fragment key={index}>
                     {serializeLexical({ nodes: [item] })}
                   </Fragment>
                 ))}
@@ -119,14 +136,14 @@ export default function serializeLexical({
 
           case 'ol': {
             const items = node.children?.filter(
-              (child: any) =>
+              (child) =>
                 child.type === 'li' || child.type === 'listitem'
             )
 
             return (
               <ol key={i} className="list-decimal pl-5 my-4">
-                {items?.map((item: any, index: number) => (
-                  <Fragment key={item.key ?? index}>
+                {items?.map((item, index) => (
+                  <Fragment key={index}>
                     {serializeLexical({ nodes: [item] })}
                   </Fragment>
                 ))}
@@ -137,13 +154,13 @@ export default function serializeLexical({
           case 'li':
           case 'listitem': {
             const children = node.children
-              ?.map((child: any) => {
+              ?.map((child) => {
                 if (child.type === 'paragraph') {
-                  return child.children
+                  return child.children || []
                 }
                 return child
               })
-              .flat()
+              .flat() || []
 
             return (
               <li
@@ -160,11 +177,11 @@ export default function serializeLexical({
             return (
               <a
                 key={i}
-                href={node.fields.url}
-                target={node.fields.newTab ? '_blank' : undefined}
+                href={node.fields?.url}
+                target={node.fields?.newTab ? '_blank' : undefined}
                 className="text-blue-600 hover:underline"
               >
-                {serializeLexical({ nodes: node.children })}
+                {serializeLexical({ nodes: node.children || [] })}
               </a>
             )
 
@@ -178,10 +195,12 @@ export default function serializeLexical({
                 key={i}
                 className="my-8 relative w-full h-auto aspect-video overflow-hidden"
               >
-                <img
+                <Image
                   src={src}
                   alt={value.alt || ''}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
                 />
               </div>
             )
@@ -199,7 +218,7 @@ export default function serializeLexical({
 
             return (
               <Tag key={i} className={className}>
-                {serializeLexical({ nodes: node.children })}
+                {serializeLexical({ nodes: node.children || [] })}
               </Tag>
             )
           }
