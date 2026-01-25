@@ -15,18 +15,16 @@ export default async function OurBlogs() {
   return (
     <section className="py-24 bg-[#f0f1f5]">
       <div className="container mx-auto px-4">
-        {/* Header */}
+        
         <div className="flex flex-col items-center mb-16">
           <span className="text-[#2B2B2B99] text-subtitle-1 tracking-wide mb-2">OUR BLOGS</span>
           <h2 className="text-[#333333] text-heading-2-semibold md:text-[40px] mb-6 text-center">Recent Articles</h2>
           <div className="h-[24px] w-[2px] bg-[#C84E26]"></div>
         </div>
 
-        {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {posts.docs.map((post) => (
             <div key={post.id} className="flex flex-col gap-10 group cursor-pointer bg-white rounded-[8px]">
-              {/* Image Container */}
               <div className="relative w-full h-[348px] rounded-t-[8px] overflow-hidden">
                 {post.coverImage && typeof post.coverImage !== 'string' && post.coverImage.url ? (
                   <Image
@@ -42,7 +40,7 @@ export default async function OurBlogs() {
                 )}
               </div>
 
-              {/* Content */}
+             
               <div className="flex flex-col grow bg-white px-8 rounded-b-[8px]">
                 <Link href={`/blog/${post.slug}`}>
                     <h3 className="text-[#2B2B2B] text-title-blog mb-4 group-hover:text-[#C84E26] transition-colors line-clamp-2">
@@ -50,7 +48,7 @@ export default async function OurBlogs() {
                     </h3>
                 </Link>
                 
-                {/* Metadata */}
+                
                 <div className="flex items-center justify-between text-[#2B2B2BCC] text-sm mt-auto pb-16">
                     {post.publishedDate && (
                         <span>{new Date(post.publishedDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>

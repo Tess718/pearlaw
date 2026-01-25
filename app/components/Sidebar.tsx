@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Clock4, ClipboardList } from 'lucide-react'
 import { getPayloadClient } from '@/lib/payload'
 
-// We will fetch data inside this component as it's a Server Component
+
 export default async function Sidebar() {
   const payload = await getPayloadClient()
 
@@ -26,7 +26,7 @@ export default async function Sidebar() {
 
   return (
     <div className="space-y-12">
-      {/* Recent Articles Widget */}
+      
       <div>
        <div className='w-[40px] h-[3.5px] bg-[#C84E26] rounded-[3.5px] mb-4'/>
 
@@ -64,7 +64,7 @@ export default async function Sidebar() {
          </div>
       </div>
 
-      {/* Tags Widget */}
+      
       <div>
          <h3 className="text-heading-4-semibold capitalize text-[#2B2B2B] mb-6">Tags</h3>
          <div className="flex flex-wrap gap-2">
@@ -76,7 +76,7 @@ export default async function Sidebar() {
          </div>
       </div>
 
-      {/* Practice Areas Widget */}
+      
       <div>
          <h3 className="text-heading-4-semibold capitalize text-[#2B2B2B] mb-4">Practice Areas</h3>
           <ul className="space-y-3">

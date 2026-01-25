@@ -225,7 +225,7 @@ export default function ContactHero() {
                 <div className="bg-expense lg:pt-[80px] pt-[32px] pb-[100px] md:pb-[194px] mt-[80px] lg:mb-[120px] mb-[80px]"> 
                 <div className="container px-4 mx-auto">
                     
-                    {/* Header Section */}
+                    
                     <div className="flex flex-col items-center">
                         <h4 className="md:bg-transparent md:text-[#C84E26] md:p-0 md:rounded-none md:mb-2 md:tracking-widest md:uppercase bg-white text-black px-[58px] py-[4px] rounded-full font-bold text-[14px] mb-6 uppercase w-fit mx-auto">
                             Flexible Plans
@@ -235,10 +235,10 @@ export default function ContactHero() {
                             Explore Our Retainership Plans
                         </h2>
 
-                        {/* Desktop Vertical Line */}
+
                         <div className="w-[1px] h-[40px] bg-[#C84E26] mx-auto mb-[60px] hidden md:block"></div>
 
-                        {/* Mobile Description & CTA */}
+                        
                         <div className="block md:hidden text-center mb-10 w-full">
                             <p className="text-[#FEFEFECC] text-[16px] leading-[24px] mb-[60px]">
                                 Discover flexible retainership options designed to provide ongoing legal support tailored to your specific needs and budget.
@@ -251,7 +251,8 @@ export default function ContactHero() {
 
                     <div className="md:rounded-tr-[30px] md:rounded-bl-[30px] md:border-[0.6px] md:border-[#FFFFFF33] md:p-[40px] md:px-[60px] md:py-[80px]">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] md:gap-[18px]">
-                            {/* Item 1 */}
+                            
+
                             <div className="flex flex-col md:items-center md:text-center items-start text-left border border-white/20  rounded-xl p-6 md:border-none md:bg-transparent md:p-0">
                                 <div className="w-[48px] h-[48px] md:w-[60px] md:h-[60px] bg-[#C84E26] rounded-[8px] text-white md:bg-white md:rounded-full md:text-[#C84E26] flex items-center justify-center mb-4 md:mb-6">
                                     <Check className="md:w-[32px] md:h-[32px] w-[24px] h-[24px]" />
@@ -260,7 +261,7 @@ export default function ContactHero() {
                                 <p className="text-[#FEFEFECC] text-[15px] md:text-[16px] leading-[22px] md:leading-[24px]">Get expedited responses and dedicated attention</p>
                             </div>
 
-                            {/* Item 2 */}
+                            
                             <div className="flex flex-col md:items-center md:text-center items-start text-left border border-white/20  rounded-xl p-6 md:border-none md:bg-transparent md:p-0">
                                 <div className="w-[48px] h-[48px] md:w-[60px] md:h-[60px] bg-[#C84E26] rounded-[8px] text-white md:bg-white md:rounded-full md:text-[#C84E26] flex items-center justify-center mb-4 md:mb-6">
                                     <Clock className="md:w-[32px] md:h-[32px] w-[24px] h-[24px]" />
@@ -269,7 +270,7 @@ export default function ContactHero() {
                                 <p className="text-[#FEFEFECC] text-[15px] md:text-[16px] leading-[22px] md:leading-[24px]">Fixed monthly rates with predictable costs</p>
                             </div>
 
-                            {/* Item 3 */}
+                            
                             <div className="flex flex-col md:items-center md:text-center items-start text-left border border-white/20  rounded-xl p-6 md:border-none md:bg-transparent md:p-0">
                                 <div className="w-[48px] h-[48px] md:w-[60px] md:h-[60px] bg-[#C84E26] rounded-[8px] text-white md:bg-white md:rounded-full md:text-[#C84E26] flex items-center justify-center mb-4 md:mb-6">
                                     <ShieldCheck className="md:w-[32px] md:h-[32px] w-[24px] h-[24px]" />

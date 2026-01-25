@@ -27,10 +27,10 @@ export default function RealCta() {
                             </div>
                         </div>
 
-                        {/* Vertical Divider */}
+                       
                         <div className="h-[40px] w-[2px] bg-[#C84E26] mb-8"></div>
 
-                        {/* Newsletter */}
+                        
                         <h2 className="font-medium text-[32px] md:text-[28px] text-[#FEFEFE] mb-10 mt-6">
                             Subscribe To Newsletter
                         </h2>

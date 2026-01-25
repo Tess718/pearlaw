@@ -1,3 +1,11 @@
+export  const navLinks = [
+    { name: 'Experience PLC', href: '/experience-plc' },
+    { name: 'Expertise', href: 'our-expertise' },
+    { name: 'Meet the team', href: '/dream-team' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'About', href: '/about-us' },
+  ]
+
 
 export const EXPERTISE_ITEMS = [
     {

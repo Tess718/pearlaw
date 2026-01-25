@@ -9,23 +9,23 @@ export default function Footer() {
       className="text-white pt-[60px] pb-[40px] md:py-[120px] bg-[linear-gradient(136.05deg,#1E223F_-7.57%,#131927_166.74%)] overflow-hidden"
     >
       <div className="container mx-auto px-4">
-        {/* Main Footer Content */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:mb-[160px] mb-[60px]">
           
-          {/* Company Info & Contact - Combined for Mobile Visual Flow */}
+        
           <div className="flex flex-col gap-8 md:block">
-            {/* Logo */}
+            
             <div className="flex items-center gap-2 mb-4">
               <Image src="/footerlogo.png" alt="" width={50} height={50} />
               <span className="font-semibold text-[20px] leading-[24px] tracking-[0%] hidden md:inline">Pearlaw Corporate</span>
             </div>
 
-            {/* Desktop Description - Hidden on Mobile if not in image */}
+            
             <p className="font-medium text-[16px] leading-[24px] tracking-[0%] hidden md:block">
               Protecting your right with clarity, confidence, and experience.
             </p>
             
-            {/* Social Media Icons - Desktop Location */}
+            
             <div className="hidden md:flex gap-3 mt-8">
               <Link 
                 href="#" 
@@ -47,7 +47,7 @@ export default function Footer() {
               </Link>
             </div>
 
-            {/* Contact Info - Mobile Visual Order matches Image */}
+            
             <div className="md:hidden space-y-4">
                <div className="flex items-center gap-3">
                 <i className="bi bi-whatsapp text-[#C84E26]"></i>
@@ -64,7 +64,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Contact Info - Desktop Only Block (since mobile moved it up) */}
+          
           <div className="hidden md:block">
             <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
             <div className="space-y-4">
@@ -83,7 +83,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Practice Areas - Hidden on Mobile based on image */}
+          
           <div className="hidden md:block">
             <h3 className="text-lg font-semibold mb-6">Practice Areas</h3>
             <ul className="space-y-3">
@@ -157,7 +157,7 @@ export default function Footer() {
             </ul>
           </div>
 
-           {/* Stay Updated - Mobile Only (or added to grid) */}
+           
            <div className="md:hidden">
             <h3 className="text-lg font-semibold mb-6">Stay Updated</h3>
             <p className="text-gray-300 text-[14px] leading-[24px] mb-6">
@@ -177,13 +177,13 @@ export default function Footer() {
 
         </div>
 
-        {/* Copyright & Socials (Mobile) */}
+        
         <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-6">
           <p className="text-center text-gray-400 text-sm order-1 md:order-1">
             2025 Pearlaw Corporate. All rights reserved.
           </p>
           
-          {/* Mobile Socials */}
+          
           <div className="flex gap-3 md:hidden order-2">
             <Link 
                 href="#" 

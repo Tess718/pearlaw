@@ -24,7 +24,6 @@ interface LexicalNode {
     url: string
     alt?: string
   }
-  // Index signature removed to strict type check and satisfy lint rules
 }
 
 export default function serializeLexical({
