@@ -4,8 +4,6 @@ import { notFound } from "next/navigation";
 import SerializeLexical from "@/app/components/SerializeLexical";
 import Sidebar from "@/app/components/Sidebar";
 
-export const revalidate = 3600;
-
 export async function generateStaticParams() {
   const payload = await getPayloadClient();
   const posts = await payload.find({

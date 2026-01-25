@@ -1,66 +1,107 @@
-import type { CollectionConfig } from 'payload'
+import type { CollectionConfig } from "payload";
 
 export const Blog: CollectionConfig = {
-  slug: 'blog',
+  slug: "blog",
   admin: {
-    useAsTitle: 'title',
+    useAsTitle: "title",
   },
   access: {
     read: () => true,
   },
   fields: [
     {
-      name: 'title',
-      type: 'text',
+      name: "title",
+      type: "text",
       required: true,
     },
     {
-      name: 'slug',
-      type: 'text',
+      name: "slug",
+      type: "text",
       required: true,
       unique: true,
-      index: true, 
+      index: true,
       admin: {
-        position: 'sidebar',
+        position: "sidebar",
       },
     },
     {
-      name: 'author',
-      type: 'relationship',
-      relationTo: 'users',
+      name: "author",
+      type: "relationship",
+      relationTo: "users",
     },
     {
-      name: 'publishedDate',
-      type: 'date',
+      name: "publishedDate",
+      type: "date",
     },
     {
-      name: 'coverImage',
-      type: 'upload',
-      relationTo: 'media',
+      name: "coverImage",
+      type: "upload",
+      relationTo: "media",
     },
     {
-      name: 'tags',
-      type: 'relationship',
-      relationTo: 'tags',
+      name: "tags",
+      type: "relationship",
+      relationTo: "tags",
       hasMany: true,
       admin: {
-        position: 'sidebar',
+        position: "sidebar",
       },
     },
     {
-      name: 'practiceArea',
-      type: 'relationship',
-      relationTo: 'practice-areas',
+      name: "practiceArea",
+      type: "relationship",
+      relationTo: "practice-areas",
       hasMany: true,
     },
     {
-      name: 'excerpt',
-      type: 'textarea',
-      label: 'Excerpt',
+      name: "excerpt",
+      type: "textarea",
+      label: "Excerpt",
     },
     {
-      name: 'content',
-      type: 'richText',
+      name: "content",
+      type: "richText",
     },
   ],
-}
+  hooks: {
+    afterChange: [
+      async ({ doc, req }) => {
+        if (!process.env.NEXT_PUBLIC_SERVER_URL) {
+          return doc;
+        }
+
+        try {
+          // Revalidate the blog listing
+          await fetch(
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.NEXT_PRIVATE_REVALIDATION_KEY}&path=/blog`,
+            {
+              method: "POST",
+            },
+          );
+
+          // Revalidate the homepage (for "Recent Articles" section)
+          await fetch(
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.NEXT_PRIVATE_REVALIDATION_KEY}&path=/`,
+            {
+              method: "POST",
+            },
+          );
+
+          // Revalidate the specific post
+          if (doc.slug) {
+            await fetch(
+              `${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.NEXT_PRIVATE_REVALIDATION_KEY}&path=/blog/${doc.slug}`,
+              {
+                method: "POST",
+              },
+            );
+          }
+        } catch (err) {
+          console.error("Error revalidating:", err);
+        }
+
+        return doc;
+      },
+    ],
+  },
+};

@@ -4,8 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Sidebar from "@/app/components/Sidebar";
 
-export const revalidate = 3600;
-
 export default async function BlogListing() {
   const payload = await getPayloadClient();
 
