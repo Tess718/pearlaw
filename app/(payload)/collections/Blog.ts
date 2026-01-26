@@ -1,6 +1,10 @@
 import type { CollectionConfig } from "payload";
 
-const revalidateBlog = async (doc: any) => {
+interface BlogDoc {
+  slug?: string | null;
+}
+
+const revalidateBlog = async (doc: BlogDoc) => {
   if (!process.env.NEXT_PUBLIC_SERVER_URL) {
     return;
   }
