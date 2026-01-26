@@ -1,5 +1,41 @@
 import type { CollectionConfig } from "payload";
 
+const revalidateBlog = async (doc: any) => {
+  if (!process.env.NEXT_PUBLIC_SERVER_URL) {
+    return;
+  }
+
+  try {
+    // Revalidate the blog listing
+    await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.NEXT_PRIVATE_REVALIDATION_KEY}&path=/blog`,
+      {
+        method: "POST",
+      },
+    );
+
+    // Revalidate the homepage (for "Recent Articles" section)
+    await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.NEXT_PRIVATE_REVALIDATION_KEY}&path=/`,
+      {
+        method: "POST",
+      },
+    );
+
+    // Revalidate the specific post
+    if (doc.slug) {
+      await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.NEXT_PRIVATE_REVALIDATION_KEY}&path=/blog/${doc.slug}`,
+        {
+          method: "POST",
+        },
+      );
+    }
+  } catch (err) {
+    console.error("Error revalidating:", err);
+  }
+};
+
 export const Blog: CollectionConfig = {
   slug: "blog",
   admin: {
@@ -65,41 +101,14 @@ export const Blog: CollectionConfig = {
   ],
   hooks: {
     afterChange: [
-      async ({ doc, req }) => {
-        if (!process.env.NEXT_PUBLIC_SERVER_URL) {
-          return doc;
-        }
-
-        try {
-          // Revalidate the blog listing
-          await fetch(
-            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.NEXT_PRIVATE_REVALIDATION_KEY}&path=/blog`,
-            {
-              method: "POST",
-            },
-          );
-
-          // Revalidate the homepage (for "Recent Articles" section)
-          await fetch(
-            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.NEXT_PRIVATE_REVALIDATION_KEY}&path=/`,
-            {
-              method: "POST",
-            },
-          );
-
-          // Revalidate the specific post
-          if (doc.slug) {
-            await fetch(
-              `${process.env.NEXT_PUBLIC_SERVER_URL}/api/revalidate?secret=${process.env.NEXT_PRIVATE_REVALIDATION_KEY}&path=/blog/${doc.slug}`,
-              {
-                method: "POST",
-              },
-            );
-          }
-        } catch (err) {
-          console.error("Error revalidating:", err);
-        }
-
+      async ({ doc }) => {
+        await revalidateBlog(doc);
+        return doc;
+      },
+    ],
+    afterDelete: [
+      async ({ doc }) => {
+        await revalidateBlog(doc);
         return doc;
       },
     ],
